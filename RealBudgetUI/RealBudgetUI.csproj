@@ -1,0 +1,984 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A13534A-500A-40BB-A591-060FFD37D947}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RealBudgetUI</RootNamespace>
+    <AssemblyName>RealBudgetUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.110.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.110.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\Accounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Accounts.designer.cs">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Accounts_Withdraw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Accounts_Withdraw.designer.cs">
+      <DependentUpon>Accounts_Withdraw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Accounts_Recharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Accounts_Recharge.designer.cs">
+      <DependentUpon>Accounts_Recharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Accounts_Balance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Accounts_Balance.Designer.cs">
+      <DependentUpon>Accounts_Balance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Accounts_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Accounts_Add.designer.cs">
+      <DependentUpon>Accounts_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Accounts_ImagePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Accounts_ImagePicker.designer.cs">
+      <DependentUpon>Accounts_ImagePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Accounts_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts\Accounts_View.designer.cs">
+      <DependentUpon>Accounts_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\IAccounts_Balance.cs" />
+    <Compile Include="Categories\Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories\Categories.designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categories\Categories_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories\Categories_Add.designer.cs">
+      <DependentUpon>Categories_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categories\Categories_ImagePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories\Categories_ImagePicker.designer.cs">
+      <DependentUpon>Categories_ImagePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categories\Categories_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories\Categories_View.designer.cs">
+      <DependentUpon>Categories_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reminder\Reminder_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reminder\Reminder_View.designer.cs">
+      <DependentUpon>Reminder_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Transactions_DateTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Transactions_DateTime.Designer.cs">
+      <DependentUpon>Transactions_DateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RBSettings\RBSettings_DBLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBSettings\RBSettings_DBLocation.designer.cs">
+      <DependentUpon>RBSettings_DBLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login_PassReset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login_PassReset.designer.cs">
+      <DependentUpon>Login_PassReset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login_Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login_Register.designer.cs">
+      <DependentUpon>Login_Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RBSettings\RBSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RBSettings\RBSettings.designer.cs">
+      <DependentUpon>RBSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reminder\Reminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reminder\Reminder.designer.cs">
+      <DependentUpon>Reminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports.designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Transactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Transactions.designer.cs">
+      <DependentUpon>Transactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Transactions_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Transactions_Add.designer.cs">
+      <DependentUpon>Transactions_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions\Transactions_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transactions\Transactions_View.designer.cs">
+      <DependentUpon>Transactions_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\Users.designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RBSettings\RBSettings_Email.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RBSettings\RBSettings_Email.designer.cs">
+      <DependentUpon>RBSettings_Email.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\User_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\User_Add.designer.cs">
+      <DependentUpon>User_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\User_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\User_View.designer.cs">
+      <DependentUpon>User_View.cs</DependentUpon>
+    </Compile>
+    <Content Include="RealBudget_DB.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\info_filled_25px.png" />
+    <None Include="Resources\info_popup_25px.png" />
+    <None Include="Resources\info_25px.png" />
+    <None Include="Resources\cancel_2_16px.png" />
+    <None Include="Resources\delete_sign_16px.png" />
+    <None Include="Resources\card_exchange_30px.png" />
+    <None Include="Resources\euro_30px.png" />
+    <None Include="Resources\about_40px.png" />
+    <None Include="Resources\language_40px.png" />
+    <None Include="Resources\export_csv_40px.png" />
+    <None Include="Resources\theme_icons_40px.png" />
+    <None Include="Resources\delete_row_40px.png" />
+    <None Include="Resources\backup_storage_40px.png" />
+    <None Include="Resources\database_configuration_40px.png" />
+    <None Include="Resources\delete_2_40px.png" />
+    <None Include="Resources\changePass2_40px.png" />
+    <None Include="Resources\changePass_40px.png" />
+    <None Include="Resources\open_in_window_16px.png" />
+    <None Include="Resources\open_in_window_30px.png" />
+    <None Include="Resources\insert_row_30px.png" />
+    <None Include="Resources\seen_16px.png" />
+    <None Include="Resources\seen_24px.png" />
+    <None Include="Resources\seen_30px.png" />
+    <None Include="Resources\clear_formatting_40px.png" />
+    <None Include="Resources\checkmark2_30px.png" />
+    <None Include="Resources\save_pincode_30px.png" />
+    <None Include="Resources\refund_2_40px.png" />
+    <None Include="Resources\initiate_money_transfer_40px.png" />
+    <None Include="Resources\withdrawal_limit_40px.png" />
+    <None Include="Resources\request_money_40px.png" />
+    <None Include="Resources\down_40px.png" />
+    <None Include="Resources\DateTime_40px.png" />
+    <None Include="Resources\forward_30px.png" />
+    <None Include="Resources\back_30px.png" />
+    <None Include="Resources\forward_40px.png" />
+    <None Include="Resources\back_40px.png" />
+    <None Include="packages.config" />
+    <None Include="Resources\error_database_32px1.png" />
+    <None Include="Resources\error_database_32px.png" />
+    <None Include="Resources\appicon1_bg.ico" />
+    <None Include="Resources\appicon1.ico" />
+    <None Include="Resources\unlock_40px.png" />
+    <EmbeddedResource Include="Accounts\Accounts.resx">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Accounts_Withdraw.resx">
+      <DependentUpon>Accounts_Withdraw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Accounts_Recharge.resx">
+      <DependentUpon>Accounts_Recharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Accounts_Balance.resx">
+      <DependentUpon>Accounts_Balance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Accounts_Add.resx">
+      <DependentUpon>Accounts_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Accounts_ImagePicker.resx">
+      <DependentUpon>Accounts_ImagePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounts\Accounts_View.resx">
+      <DependentUpon>Accounts_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categories\Categories.resx">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categories\Categories_Add.resx">
+      <DependentUpon>Categories_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categories\Categories_ImagePicker.resx">
+      <DependentUpon>Categories_ImagePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categories\Categories_View.resx">
+      <DependentUpon>Categories_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reminder\Reminder_View.resx">
+      <DependentUpon>Reminder_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Transactions_DateTime.resx">
+      <DependentUpon>Transactions_DateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBSettings\RBSettings_DBLocation.resx">
+      <DependentUpon>RBSettings_DBLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login_PassReset.resx">
+      <DependentUpon>Login_PassReset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Login_Register.resx">
+      <DependentUpon>Login_Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBSettings\RBSettings.resx">
+      <DependentUpon>RBSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reminder\Reminder.resx">
+      <DependentUpon>Reminder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Transactions.resx">
+      <DependentUpon>Transactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Transactions_Add.resx">
+      <DependentUpon>Transactions_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transactions\Transactions_View.resx">
+      <DependentUpon>Transactions_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RBSettings\RBSettings_Email.resx">
+      <DependentUpon>RBSettings_Email.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\User_Add.resx">
+      <DependentUpon>User_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\User_View.resx">
+      <DependentUpon>User_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_card_missing_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_euro_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_icon_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_icon64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banknotes_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banks32_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BgForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calc256px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_exchange_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Categories32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark2_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark2_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connected_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit_control_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\credit2_control_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard_Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database48.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database48_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_sign_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_sign_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_sign_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_sign_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disconnected_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit24_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editUser256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email_sett.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmailSett48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmailSett128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equity_security_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit264.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foreclosure_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\general_ledger_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gold_bars_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon cerrar2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Albania_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-abbrechen-2-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-abbrechen-2-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-aktualisieren-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-antworten-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-anzahlung-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-anzahlung-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-anzahlung-401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-anzahlung-402.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ausgang-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bank-karte-vorderseite-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bank-karte-vorderseite-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bank-karte-vorderseite-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-bearbeiten-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-benutzeranmeldeinformationen-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-benutzer-bearbeiten-männlich-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-benutzergruppe-mann-mann-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-brieftasche-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-brieftasche-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-buchung-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cashflow-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-datensicherung-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-deutschland-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-eigenschaft-mit-timer-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fügen-sie-benutzer-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-geldbeutel-euro-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-genealogie-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-großbritannien-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-großbritannien-481.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-händler-konto-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-im-bau-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-info-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-info-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-karte-verwenden-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-karte-verwenden-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-karte-verwenden-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-kreditprüfung-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-löschen-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-papier-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-passwort-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-privatgelände-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-privatgelände-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-prüfen-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-prüfen-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-seitenübersicht-3-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-speichern-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-speichern-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-speichern-als-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-spende-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sperren-2-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sperren-2-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-straßenbauarbeiter-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-straßenbauarbeiter-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-suche-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-suche-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-suche-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-transfer-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-unter-computer-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-unter-computer-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-unter-computer-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-verlassen-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-zielfahne-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-zurück-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_accounts2-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_accounts48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List_Icons8_Artist48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_logo64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_logo72.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main_form_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mastercard_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimazar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_120px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_math_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus2_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiply2_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiply23_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiply33_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiply44_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_User48_Icons8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newUser48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewUser128px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoPic_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payee32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payees64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RealBudget_Login_BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RealBudget_Login_BG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RealBudget_Login_BG2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RealBudget_Login_noBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RealBudget_SplashScreen_2_BG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RealBudget_SplashScreen_2_BG1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reminder32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reminder32_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reminder32_new2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reminder64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reports32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\res.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\safe_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_filled_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_filled_25px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings128px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\url6_edited.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_online48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users32_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users32_new1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users264.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewAll128px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\window_120px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_menu64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accounts64new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acount_new64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_account48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RealBudgetLibrary\RealBudgetLibrary.csproj">
+      <Project>{FCAAF44C-C5BD-48F4-B4A9-FBBB341B33EA}</Project>
+      <Name>RealBudgetLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.110.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>

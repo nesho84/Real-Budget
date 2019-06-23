@@ -1,0 +1,12 @@
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\bin\Debug\RealBudgetLibrary.dll
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\bin\Debug\RealBudgetLibrary.pdb
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\bin\Debug\Dapper.dll
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\bin\Debug\System.Data.SQLite.dll
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\bin\Debug\Dapper.xml
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\bin\Debug\System.Data.SQLite.xml
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\obj\Debug\RealBudgetLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\obj\Debug\RealBudgetLibrary.csproj.CopyComplete
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\obj\Debug\RealBudgetLibrary.dll
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\obj\Debug\RealBudgetLibrary.pdb
+C:\Users\Neshat\Desktop\CSharpProjectsAndTutorials\CSharpALLProjects\RealBudget\RealBudget\RealBudgetLibrary\obj\Debug\RealBudgetLibrary.csprojAssemblyReference.cache
